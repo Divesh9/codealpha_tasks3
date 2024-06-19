@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Divesh Library</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body {
+			background-color: #d1f54e;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<h1>Divesh Library</h1>
+		<div id="bookshelf">
+			<template class="book">
+				<p>Book Title</p>
+				<p>Book Author</p>
+				<p>Book Category</p>
+				<p>Borrowed: No</p>
+				<button class="btn btn-primary">Remove</button>
+				<button class="btn btn-warning">Toggle Borrow Status</button>
+				<hr>
+			</template>
+		</div>
+	</div>
+
+	<h1>Add New Book</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col">
+				<form action="submit" onsubmit="return AddBook()" id="AddBook">
+					<input class="form-control" type="text" name="title" placeholder="Title of the book..." required="">
+					<br>
+					<input class="form-control" type="text" name="author" placeholder="Author of the book..." required="">
+					<br>
+					<input class="form-control" type="text" name="category" placeholder="Category of the book..." required="">
+					<br>
+					<button class="btn btn-danger" type="submit">Add book</button>
+				</form>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+
+	<br>
+	<h2>Search Books</h2>
+	<input class="form-control" type="text" id="searchInput" placeholder="Search by title, author, or category...">
+	<br>
+
+	<h2>Categories</h2>
+	<select class="form-control" id="categoryFilter" onchange="FilterByCategory()">
+		<option value="">All Categories</option>
+	</select>
+	
+	<br>
+	<button class="btn btn-primary" onclick="SearchBooks()">Search</button>
+	<script src="main.js"></script>
+</body>
+</html>
